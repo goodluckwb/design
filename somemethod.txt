@@ -1,0 +1,568 @@
+正则表达式 说明
+
+\t 制表符.
+\n 新行.
+. 匹配任意字符.
+| 匹配表达式左边和右边的字符. 例如, "ab|bc" 匹配 "ab" 或者 "bc".
+[] 匹配列表之中的任何单个字符. 例如, "[ab]" 匹配 "a" 或者 "b". "[0-9]" 匹配任意数字.
+[^] 匹配列表之外的任何单个字符. 例如, "[^ab]" 匹配 "a" 和 "b" 以外的字符. "[^0-9]" 匹配任意非数字字符.
+* 其左边的字符被匹配任意次(0次，或者多次). 例如 "be*" 匹配 "b", "be" 或者 "bee".
++ 其左边的字符被匹配至少一次(1次，或者多次). 例如 "be+" 匹配 "be" 或者 "bee" 但是不匹配 "b".
+? 其左边的字符被匹配0次或者1次. 例如 "be?" 匹配 "b" 或者 "be" 但是不匹配 "bee".
+^ 其右边的表达式被匹配在一行的开始. 例如 "^A" 仅仅匹配以 "A" 开头的行.
+$ 其左边的表达式被匹配在一行的结尾. 例如 "e$" 仅仅匹配以 "e" 结尾的行.
+() 影响表达式匹配的顺序，并且用作表达式的分组标记.
+\ 转义字符. 如果你要使用 "" 本身, 则应该使用 "\".
+
+乘风规则更新地址：
+
+https://raw.githubusercontent.com/xinggsf/Adblock-Plus-Rule/master/ABP-FX.txt
+
+免费VIP视频解析接口
+
+http://jx.hezeshi.net/index.php?url= 
+http://api.greatchina56.com/?url=
+http://api.xiaomil.com/a/index.php?url=
+https://api.pangujiexi.com/player.php?url=
+http://at520.cn/jx/?url=
+http://api.nobij.top/jx/?url=
+http://player.jidiaose.com/supapi/iframe.php?v=
+http://api.91exp.com/svip/?url=
+https://jx.618g.com/?url=
+http://api.bbbbbb.me/ipsign/player.php?v=
+http://api.bbbbbb.me/jx/?url=
+http://api.bbbbbb.me/svip/v.php?url=
+http://17kyun.com/api.php?url=
+http://jx.hanximeng.com/api.php?url=
+http://tv.x-99.cn/api/wnapi.php?id=
+http://tv.x-99.cn/api/api.php?id=
+http://api.niubijiexi.com/jiexi.php?url=
+http://api.zuilingxian.com/jiexi.php?url=
+http://api.lequgirl.com/?url=
+
+
+一 WR注册文件
+把下面的数据复制到“记事本”中,另存为“rarreg.key”文件，保存到WinRAR安装文件夹即完成注册。
+RAR registration data
+kaky
+Unlimited Company License
+UID=419fee2d73b224b7055d
+6412212250055dd4dca6d413adc534002df864fcff565a5375a0dd
+ceb9a67fe8454fdb7ac460fce6cb5ffde62890079861be57638717
+7131ced835ed65cc743d9777f2ea71a8e32c7e593cf66794343565
+b41bcf56929486b8bcdac33d50ecf77399608fa10302d3ec9de513
+937c001cdc8d264495c2994ae9f82711263e3b23796f6d000ab477
+3045f572b03c64cbb2dbb59fec34427f7e112ddb5ad973836004ce
+3417fad27906c5cb76b2e5c432a89ada081110d1c0993140837070
+
+RAR registration data
+Federal Agency for Education
+1000000 PC usage license
+UID=b621cca9a84bc5deffbf
+6412612250ffbf533df6db2dfe8ccc3aae5362c06d54762105357d
+5e3b1489e751c76bf6e0640001014be50a52303fed29664b074145
+7e567d04159ad8defc3fb6edf32831fd1966f72c21c0c53c02fbbb
+2f91cfca671d9c482b11b8ac3281cb21378e85606494da349941fa
+e9ee328f12dc73e90b6356b921fbfb8522d6562a6a4b97e8ef6c9f
+fb866be1e3826b5aa126a4d2bfe9336ad63003fc0e71c307fc2c60
+64416495d4c55a0cc82d402110498da970812063934815d81470829275
+
+二 常用的DNS服务器
+
+国外公共DNS服务器地址
+Google Public DNS （8.8.8.8， 8.8.4.4）
+OpenDNS （208.67.222.222， 208.67.220.220）
+OpenDNS Family （208.67.222.123， 208.67.220.123）
+V2EX DNS （199.91.73.222， 178.79.131.110）
+Dyn DNS （216.146.35.35， 216.146.36.36）
+Comodo Secure (8.26.56.26， 8.20.247.20)
+UltraDNS （156.154.70.1， 156.154.71.1）
+Norton ConnectSafe (199.85.126.10, 199.85.127.10)
+国内公共DNS服务器地址
+OneDNS  （112.124.47.27）
+OpenerDNS（42.120.21.30）
+aliDNS （223.5.5.5， 223.6.6.6）
+114DNS （114.114.114.114， 114.114.115.115）
+114DNS安全版 （114.114.114.119， 114.114.115.119）
+114DNS家庭版 （114.114.114.110， 114.114.115.110）
+Dns派：电信/移动/铁通 （101.226.4.6， 218.30.118.6）
+Dns派：联通 （123.125.81.6， 140.207.198.6）
+CNNIC SDNS 1.2.4.8 210.2.4.8 
+百度公共DNS：180.76.76.76
+腾讯DNSPod: 119.29.29.29
+
+三 Host文件
+#microsoft live start
+134.170.108.154  onedrive.live.com
+134.170.104.90   onedrive.live.com
+134.170.108.26   onedrive.live.com
+134.170.107.154  onedrive.live.com
+134.170.107.26   onedrive.live.com
+134.170.108.24   skyapi.onedrive.live.com
+134.170.108.72   skyapi.onedrive.live.com
+134.170.104.232  skyapi.onedrive.live.com
+134.170.108.224  skyapi.onedrive.live.com
+134.170.109.48	 skyapi.onedrive.live.com
+95.100.168.130   skyapi.onedrive.live.com
+#microsoft live end
+
+#github start
+192.30.253.113 github.com
+192.30.253.113 github.com
+192.30.253.118 gist.github.com
+192.30.253.119 gist.github.com
+#github end
+
+四 可用的 DetectFile 路径
+  （注：以下默认 C:\ 为系统分区）
+%AppData%
+Windows XP: C:\Documents and Settings\{username}\Application Data
+Windows Vista/7: C:\Users\{username}\AppData\Roaming
+
+%CommonAppData%
+Windows XP: C:\Documents and Settings\All Users\Application Data
+Windows Vista/7: C:\ProgramData
+
+%CommonProgramFiles%
+C:\Program Files\Common Files
+C:\Program Files(x86)\Common Files
+此路径对32位及 64位目录有效，CCleaner 将自动检测。
+
+%HomeDrive%
+C:\
+
+%LocalAppData%
+Windows XP: C:\Documents and Settings\{用户名}\Local Settings\Application Data
+Windows Vista/7: C:\Users\{用户名}\AppData\Local\
+
+%ProgramFiles%
+C:\Program Files\
+C:\Program Files(x86)
+此路径对32位及 64位目录有效，CCleaner 将自动检测。
+
+%SystemDrive%
+C:\
+
+%UserProfile%
+Windows XP: %SystemDrive%\Documents and Settings\{用户名}
+Windows Vista/7: %SystemDrive%\Users\{用户名}
+
+%WinDir%
+C:\Windows
+
+五 CCleaner添加自定义文件夹
+Windows自动更新缓存文件 %WinDir%\SoftwareDistribution\Download\
+Windows Defender病毒库备份 %CommonAppData%\Microsoft\Windows Defender\Definition Updatas\Backup\
+
+
+
+七 CMD常用命令
+ a
+  ADDUSERS Add or list users to/from a CSV file 
+    ADmodcmd Active Directory Bulk Modify 
+    ARP      Address Resolution Protocol 
+    ASSOC    Change file extension associations. 
+    ASSOCIAT One step file association 
+    AT       Schedule a command to run at a specific time 
+    ATTRIB   Change file attributes 
+ b 
+    BCDBOOT  Create or repair a system partition 
+    BCDEDIT  Manage Boot Configuration Data 
+    BITSADMIN Background Intelligent Transfer Service 
+    BOOTCFG  Edit Windows boot settings 
+    BROWSTAT Get domain, browser and PDC info 
+ c 
+    CACLS    Change file permissions 
+    CALL     Call one batch program from another. 
+    CERTREQ  Request certificate from a certification authority 
+    CERTUTIL Utility for certification authority (CA) files and services 
+    CD       Change Directory - move to a specific Folder. 
+    CHANGE   Change Terminal Server Session properties 
+    CHKDSK   Check Disk - check and repair disk problems 
+    CHKNTFS  Check the NTFS file system 
+    CHOICE   Accept keyboard input to a batch file 
+    CIPHER   Encrypt or Decrypt files/folders 
+    CleanMgr Automated cleanup of Temp files, recycle bin 
+    CLEARMEM Clear memory leaks 
+    CLIP     Copy STDIN to the Windows clipboard 
+    CLS      Clear the screen. 
+    CLUSTER  Windows Clustering 
+    CMD      Start a new CMD shell 
+    CMDKEY   Manage stored usernames/passwords 
+    COLOR    Change colors of the CMD window. 
+    COMP     Compare the contents of two files or sets of files 
+    COMPACT  Compress files or folders on an NTFS partition 
+    COMPRESS Compress one or more files 
+    CON2PRT  Connect or disconnect a Printer 
+    CONVERT  Convert a FAT drive to NTFS 
+    COPY     Copy one or more files to another location. 
+    CSCcmd   Client-side caching (Offline Files) 
+    CSVDE    Import or Export Active Directory data  
+ d 
+    DATE     Display or set the date. 
+    DEFRAG   Defragment hard drive 
+    DEL      Delete one or more files. 
+    DELPROF  Delete user profiles 
+    DELTREE  Delete a folder and all subfolders 
+    DevCon   Device Manager Command Line Utility  
+    DIR      Display a list of files and folders. 
+    DIRUSE   Display disk usage 
+    DISKPART Disk Administration 
+    DISKSHADOW Volume Shadow Copy Service 
+    DNSSTAT  DNS Statistics 
+    DOSKEY   Edit command line, recall commands, and create macros 
+    DriverQuery Display installed device drivers 
+    DSACLs   Active Directory ACLs 
+    DSAdd    Add items to active directory (user group computer)  
+    DSGet    View items in active directory (user group computer) 
+    DSQuery  Search for items in active directory (user group computer) 
+    DSMod    Modify items in active directory (user group computer) 
+    DSMove   Move an Active directory Object 
+    DSRM     Remove items from Active Directory 
+ e 
+    ECHO     Display message on screen. 
+    ENDLOCAL End localisation of environment changes in a batch file. 
+    ERASE    Delete one or more files. 
+    EVENTCREATE Add a message to the Windows event log 
+    EXIT     Quit the current script/routine and set an errorlevel. 
+    EXPAND   Uncompress CAB files 
+    EXTRACT  Uncompress CAB files 
+ f 
+    FC       Compare two files 
+    FIND     Search for a text string in a file 
+    FINDSTR  Search for strings in files 
+    FOR /F   Loop command: against a set of files. 
+    FOR /F   Loop command: against the results of another command. 
+    FOR      Loop command: all options Files, Directory, List. 
+    FORFILES Batch process multiple files 
+    FORMAT   Format a disk 
+    FREEDISK Check free disk space (in bytes) 
+    FSUTIL   File and Volume utilities 
+    FTP      File Transfer Protocol 
+    FTYPE    File extension file type associations. 
+ g 
+    GETMAC   Display the Media Access Control (MAC) address 
+    GLOBAL   Display membership of global groups 
+    GOTO     Direct a batch program to jump to a labelled line. 
+    GPRESULT Display Resultant Set of Policy information 
+    GPUPDATE Update Group Policy settings 
+ h 
+    HELP     Online Help 
+    HOSTNAME Display the host name of the computer 
+ i 
+    iCACLS   Change file and folder permissions 
+    IF       Conditionally perform a command. 
+    IFMEMBER Is the current user a member of a Workgroup 
+    IPCONFIG Configure IP 
+ k 
+    KILL     Remove a program from memory 
+ l 
+    LABEL    Edit a disk label 
+    LOCAL    Display membership of local groups 
+    LOGEVENT Write text to the event viewer 
+    LOGMAN   Manage Performance Monitor 
+    LOGOFF   Log a user off 
+    LOGTIME  Log the date and time in a file 
+ m 
+    MAKECAB  Create .CAB files 
+    MAPISEND Send email from the command line 
+    MBSAcli  Baseline Security Analyzer 
+    MEM      Display memory usage 
+    MD       Create new folders. 
+    MKLINK   Create a symbolic link (linkd) . 
+    MODE     Configure a system device 
+    MORE     Display output, one screen at a time 
+    MOUNTVOL Manage a volume mount point 
+    MOVE     Move files from one folder to another. 
+    MOVEUSER Move a user from one domain to another 
+    MSG      Send a message 
+    MSIEXEC  Microsoft Windows Installer 
+    MSINFO32 System Information 
+    MSTSC    Terminal Server Connection (Remote Desktop Protocol) 
+    MV       Copy in-use files 
+ n 
+    NET      Manage network resources 
+    NETDOM   Domain Manager 
+    NETSH    Configure Network Interfaces, Windows Firewall & Remote access 
+    NETSVC   Command-line Service Controller 
+    NBTSTAT  Display networking statistics (NetBIOS over TCP/IP) 
+    NETSTAT  Display networking statistics (TCP/IP) 
+    NOW      Display the current Date and Time  
+    NSLOOKUP Name server lookup 
+    NTBACKUP Backup folders to tape 
+    NTDSUtil Active Directory Domain Services management 
+    NTRIGHTS Edit user account rights 
+ o 
+    OPENFILES Query or display open files 
+ p 
+    PATH     Display or set a search path for executable files. 
+    PATHPING Trace route plus network latency and packet loss 
+    PAUSE    Suspend processing of a batch file and display a message. 
+    PERMS    Show permissions for a user 
+    PERFMON  Performance Monitor 
+    PING     Test a network connection 
+    POPD     Return to a previous directory saved by PUSHD. 
+    PORTQRY  Display the status of ports and services 
+    POWERCFG Configure power settings 
+    PRINT    Print a text file 
+    PRINTBRM Print queue Backup/Recovery 
+    PRNCNFG  Display, configure or rename a printer 
+    PRNMNGR  Add, delete, list printers set the default printer 
+    PROMPT   Change the command prompt. 
+    PsExec     Execute process remotely 
+    PsFile     Show files opened remotely 
+    PsGetSid   Display the SID of a computer or a user 
+    PsInfo     List information about a system 
+    PsKill     Kill processes by name or process ID 
+    PsList     List detailed information about processes 
+    PsLoggedOn Who's logged on (locally or via resource sharing) 
+    PsLogList  Event log records 
+    PsPasswd   Change account password 
+    PsPing     Measure network performance 
+    PsService  View and control services 
+    PsShutdown Shutdown or reboot a computer 
+    PsSuspend  Suspend processes 
+    PUSHD    Save and then change the current directory. 
+ q 
+    QGREP    Search file(s) for lines that match a given pattern 
+    Query Process    Display processes (TS/Remote Desktop) 
+    Query Session    Display all sessions (TS/Remote Desktop) 
+    Query TermServer List all servers (TS/Remote Desktop) 
+    Query User       Display user sessions (TS/Remote Desktop) 
+ r 
+    RASDIAL  Manage RAS connections 
+    RASPHONE Manage RAS connections 
+    RECOVER  Recover a damaged file from a defective disk 
+    REG      Registry: Read, Set, Export, Delete keys and values 
+    REGEDIT  Import or export registry settings 
+    REGSVR32 Register or unregister a DLL 
+    REGINI   Change Registry Permissions 
+    REM      Record comments (remarks) in a batch file. 
+    REN      Rename a file or files. 
+    REPLACE  Replace or update one file with another 
+    Reset Session  Delete a Remote Desktop Session 
+    RD       Delete folder(s). 
+    RMTSHARE Share a folder or a printer 
+    ROBOCOPY Robust File and Folder Copy 
+    ROUTE    Manipulate network routing tables 
+    RUN      Start | RUN commands 
+    RUNAS    Execute a program under a different user account 
+    RUNDLL32 Run a DLL command (add/remove print connections) 
+
+
+ s 
+    SC       Service Control 
+    SCHTASKS Schedule a command to run at a specific time 
+    SCLIST   Display Services 
+    SET      Display, set, or remove session environment variables. 
+    SETLOCAL Control the visibility of environment variables. 
+    SETX     Set environment variables 
+    SFC      System File Checker  
+    SHARE    List or edit a file share or print share 
+    ShellRunAs Run a command under a different user account 
+    SHIFT    Shift the position of batch file parameters. 
+    SHORTCUT Create a windows shortcut (.LNK file) 
+    SHOWGRPS List the Workgroups a user has joined 
+    SHOWMBRS List the Users who are members of a Workgroup 
+    SHUTDOWN Shutdown the computer 
+    SLEEP    Wait for x seconds 
+    SLMGR    Software Licensing Management (Vista/2008) 
+    SOON     Schedule a command to run in the near future 
+    SORT     Sort input 
+    START    Start a program, command or batch file. 
+    SU       Switch User 
+    SUBINACL Edit file and folder Permissions, Ownership and Domain 
+    SUBST    Associate a path with a drive letter 
+    SYSTEMINFO List system configuration 
+ t 
+    TAKEOWN  Take ownership of a file 
+    TASKLIST List running applications and services 
+    TASKKILL Remove a running process from memory 
+    TELNET   Communicate with another host using the TELNET protocol 
+    TIME     Display or set the system time. 
+    TIMEOUT  Delay processing of a batch file 
+    TITLE    Set the window title for a CMD.EXE session. 
+    TLIST    Task list with full path 
+    TOUCH    Change file timestamps     
+    TRACERT  Trace route to a remote host 
+    TREE     Graphical display of folder structure 
+    TSDISCON Disconnect a Remote Desktop Session 
+    TSSHUTDN Remotely shut down or reboot a terminal server 
+    TYPE     Display the contents of a text file. 
+    TypePerf Write performance data to a log file 
+ u 
+    USRSTAT  List domain usernames and last login 
+ v 
+    VER      Display version information. 
+    VERIFY   Verify that files have been saved. 
+    VOL      Display a disk label. 
+ w 
+    WAITFOR  Wait for or send a signal 
+    WEVTUTIL Clear event logs, enable/disable/query logs 
+    WHERE    Locate and display files in a directory tree 
+    WHOAMI   Output the current UserName and domain 
+    WINDIFF  Compare the contents of two files or sets of files 
+    WINMSDP  Windows system report 
+    WINRM    Windows Remote Management 
+    WINRS    Windows Remote Shell 
+    WMIC     WMI Commands 
+    WUAUCLT  Windows Update 
+ x 
+    XCACLS   Change file and folder permissions 
+    XCOPY    Copy files and folders 
+    ::       Comment / Remark.
+
+Windows 10 KMS激活密钥
+
+Windows 10 Home - TX9XD-98N7V-6WMQ6-BX7FG-H8Q99
+Windows 10 Home N - 3KHY7-WNT83-DGQKR-F7HPR-844BM
+Windows 10 Home Single Language - 7HNRX-D7KGG-3K4RQ-4WPJ4-YTDFH
+Windows 10 Home Country Specific - PVMJN-6DFY6-9CCP6-7BKTT-D3WVR
+Windows 10 Professional - W269N-WFGWX-YVC9B-4J6C9-T83GX
+Windows 10 Professional N - MH37W-N47XK-V7XM9-C7227-GCQG9
+Windows 10 Education - NW6C2-QMPVW-D7KKK-3GKT6-VCFB2
+Windows 10 Education N - 2WH4N-8QGBV-H22JP-CT43Q-MDWWJ
+Windows 10 Enterprise - NPPR9-FWDCX-D2C8J-H872K-2YT43
+Windows 10 Enterprise N - DPH2V-TTNVB-4X9Q3-TJR4H-KHJW4
+Windows 10 Enterprise 2015 LTSB - WNMTR-4C88C-JK8YV-HQ7T2-76DF9
+Windows 10 Enterprise 2015 LTSB N - 2F77B-TNFGY-69QQF-B8YKP-D69TJ
+
+Office Professional Plus 2016 - XQNVK-8JYDB-WJ9W3-YJ8YR-WFG99
+Office Standard 2016 - JNRGM-WHDWX-FJJG3-K47QV-DRTFM
+Project Professional 2016 - YG9NW-3K39V-2T3HJ-93F3Q-G83KT
+Project Standard 2016 - GNFHQ-F6YQM-KQDGJ-327XX-KQBVC
+Visio Professional 2016 - PD3PC-RHNGV-FXJ29-8JK7D-RJRJK
+Visio Standard 2016 - 7WHWN-4T7MP-G96JF-G33KR-W8GF4
+Access 2016 - GNH9Y-D2J4T-FJHGG-QRVH7-QPFDW
+Excel 2016 - 9C2PK-NWTVB-JMPW8-BFT28-7FTBF
+OneNote 2016 - DR92N-9HTF2-97XKM-XW2WJ-XW3J6
+Outlook 2016 - R69KK-NTPKF-7M3Q4-QYBHW-6MT9B
+PowerPoint 2016 - J7MQP-HNJ4Y-WJ7YM-PFYGF-BY6C6
+Publisher 2016 - F47MM-N3XJP-TQXJ9-BP99D-8K837
+Skype for Business 2016 - 869NQ-FJ69K-466HW-QYCP2-DDBV6
+Word 2016 - WXY84-JN2Q9-RBCCQ-3Q3J3-3PFJ6
+
+更换Key：
+slmgr /upk
+slmgr /ipk xxxxx-xxxxx-xxxxx-xxxxx-xxxxx
+
+激活windows的命令为：
+01.slmgr /skms franklv.ddns.net
+（kms.xspace.in kms.shuax.com、skms.ddns.net）
+02.slmgr /ato
+
+slmgr -dli -dlv -xpr
+
+win10专业版本数字权利激活
+ 注意只能合适全新安装的10586版本
+ 第1步
+ 选择“开始”图标按钮，然后依次选择“设置”>“更新和安全”>“激活”。
+ 选择“更改产品密钥”，然后输入 PW48G-MNG8W-B9978-YWBRP-76DGY
+ 激活不了的，点关闭
+ 第2步
+ 更改产品密钥
+ 输入KWWVF-VNVFM-HTVTP-YP824-WFDHC 联网激活
+ 这个是win8MAK，目前还有激活次数
+ 第3步
+ 更改产品密钥
+ 输入 VK7JG-NPHTM-C97JM-9MPGT-3V66T，取得数字权利
+
+激活office2016命令为：
+01.cd C:\Program Files\Microsoft Office\Office16
+02.cscript ospp.vbs /sethst:franklv.ddns.net
+03.cscript ospp.vbs /act
+
+cscript OSPP.VBS /dstatus
+cscript ospp.vbs /unpkey:XXXXX XXXXX为要删key的最后5位字母
+cscript ospp.vbs /inpkey:XXXXX-XXXXX-XXXXX-XXXXX-XXXXX
+BN346-KPVRG-HHQG3-6YDPV-8HV7H
+
+slmgr -xpr ID
+
+
+[plain] view plain copy 
+xykz.f3322.org 有效  
+kms.chinancce.com 有效  
+kms.lotro.cc 有效  
+www.zgbs.cc 有效  
+cy2617.jios.org 有效  
+kms-win.msdn123.com 有效   
+k.zpale.com m.zpale.com mvg.zpale.com 有效   
+kms.shuax.com 有效  
+ss.yechiu.xin 有效  
+[plain] view plain copy 
+kms.dwhd.org 有效  
+[plain] view plain copy 
+kms.03k.org 有效  
+[plain] view plain copy 
+kms.luody.info 有效  
+[plain] view plain copy 
+kms.digiboy.ir 有效  
+[plain] view plain copy 
+win10.co 有效  
+
+    青睐：ffff00
+
+　　纯正：4d7455
+
+　　吉祥：32cd32
+
+　　激情红：d03d33
+
+　　明亮紫：8232ed
+
+　　深邃绿：37864d
+
+　　暗夜舟：191970
+
+　　青翠绿：51b350
+
+　　冠军紫：7f48c3
+
+　　平静蓝：94cad0
+
+　　原创：dcf2ff
+
+　　奥秘紫：8232cf
+
+　　不洁之地：808000
+
+　　耀眼金：cfab31
+
+　　明亮之绿：a1ff59
+
+　　挖掘之地：bdb76b
+
+　　青空蓝：0097ce
+
+　　深邃蓝：3d684c
+
+　　结晶蓝：1a3d85
+
+　　活泼橙：d07733
+
+　　守卫红：ff4200
+
+　　曼恩薄荷：bcddb3
+
+　　大地绿：5ac355
+
+　　瑰丽玛瑙：d11fa1
+
+　　朱红新生：ca0123
+
+　　灰烬：ffc604
+
+　　米黄马裤：f0e68c
+
+　　诅咒墨：060606
+
+　　冠军蓝：507dfe
+
+　　豚炮：ffaf00
+
+　　夏日温情：ffeebc
+
+　　淡然绿：b7cf33
+
+　　夜魇暗潮橙：f79d00
